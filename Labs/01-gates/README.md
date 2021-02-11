@@ -1,10 +1,7 @@
-
 ##GitHub link to Digital-electronict-1 repository:
 https://github.com/KamilHolub/Digital-electronics-1
-
-#De Morgans Law
+##De Morgans Law
 ##Table with logical values:
-
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
 | 0 | 0 | 0 | 1 |
@@ -15,9 +12,7 @@ https://github.com/KamilHolub/Digital-electronics-1
 | 1 | 0 | 1 | 1 |
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 0 |
-
 ## VHDL code:
-
 ```vhdl
 entity gates is
     port(
@@ -31,9 +26,6 @@ entity gates is
 end entity gates;
 ```
 ##Screenshot with simulated time waveforms:
-
 ![De Morgans Law Simulation](Images/simulace.png)
-
 ##Link to public EDA example:
-
 https://www.edaplayground.com/x/MGKB
