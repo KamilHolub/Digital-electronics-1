@@ -48,7 +48,7 @@ end architecture dataflow;
 
 ### Screenshot with simulated time waveforms:
 
-![De Morgans Law Simulation](Images/simulace De Morgan.png)
+![De Morgans Law Simulation](Images/simulace1.png)
 
 ### Link to public EDA example:
 
@@ -88,7 +88,7 @@ end architecture dataflow;
 ```
 ### Screenshot with simulated time waveforms:
 
-![Distributive Law Simulation](Images/simulace Distributive law.png)
+![Distributive Law Simulation](Images/simulace2.png)
 
 ### Link to public EDA example:
 
