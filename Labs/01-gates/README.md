@@ -1,10 +1,10 @@
-##GitHub link to Digital-electronics-1 repository:
+## GitHub link to Digital-electronics-1 repository:
 
 https://github.com/KamilHolub/Digital-electronics-1
 
-##De Morgans Law
+## De Morgans Law
 
-##Table with logical values:
+## Table with logical values:
 
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
@@ -32,10 +32,10 @@ entity gates is
 end entity gates;
 ```
 
-##Screenshot with simulated time waveforms:
+## Screenshot with simulated time waveforms:
 
 ![De Morgans Law Simulation](Images/simulace.png)
 
-##Link to public EDA example:
+## Link to public EDA example:
 
 https://www.edaplayground.com/x/MGKB
