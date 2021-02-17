@@ -1,5 +1,4 @@
 | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **B is less than A** |
-| :-: | :-: | :-: | :-: | :-: | :-: |
 | 0 | 0 0 | 0 0 | 0 | 1 | 0 |
 | 1 | 0 0 | 0 1 | 0 | 0 | 1 |
 | 2 | 0 0 | 1 0 | 0 | 0 | 1 |
@@ -17,4 +16,4 @@
 | 14 | 1 1 | 1 0 | 1 | 0 | 0 |
 | 15 | 1 1 | 1 1 | 1 | 1 | 0 |
 
-![Sum of Products and Product of Sums](Images/SoPPoS.gif)
+![Sum of Products and Product of Sums](Images/SoPPoS.png)
