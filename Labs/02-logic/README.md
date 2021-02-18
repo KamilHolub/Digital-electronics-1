@@ -18,4 +18,7 @@
 | 15 | 1 1 | 1 1 | 1 | 1 | 0 |
 
 ![Sum of Products and Product of Sums](Images/SoPPoS.png)
+
 ![Equation of simplified SoP and PoS](Images/simplifiedSoPPoS.png)
+
+![Karnaugh Maps](Images/KarnauhgMaps.png)
