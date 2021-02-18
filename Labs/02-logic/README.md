@@ -182,6 +182,17 @@ end architecture testbench;
 
 ### Simulator console output:
 
+```vhdl
+analyze design.vhd
+analyze testbench.vhd
+elaborate tb_comparator_2bit
+testbench.vhd:51:9:@0ms:(report note): Stimulus process started
+testbench.vhd:102:9:@1100ns:(assertion error): Test failed for input combination: 1111, 1111
+testbench.vhd:106:9:@1100ns:(report note): Stimulus process finished
+Finding VCD file...
+./dump.vcd
+```
+
 ![4-bit binary simulation](Images/Simulation.png)
 
 ### Link to public EDA Playground example:
