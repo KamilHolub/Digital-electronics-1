@@ -21,4 +21,4 @@
 
 ![Equation of simplified SoP and PoS](Images/simplifiedSoPPoS.png)
 
-![Karnaugh Maps](Images/KarnauhgMaps.png)
+![Karnaugh Maps](Images/KarnaughMaps.png)
