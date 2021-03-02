@@ -53,9 +53,9 @@ p_stimulus : process
 
 ![TimeWaveforms](Images/Analysis.png)
 
-# A Vivado tutorial:
+# 3. A Vivado tutorial:
 
-## Založení projektu:
-### Pro založení nového projektu po spuštění programu klikněte v úvodním okně na možnost Create Project
-### Spustí se wizard pro založení projektu - klikněte na Next
-### 
+### Založení projektu:
+1) Pro založení nového projektu po spuštění programu klikněte v úvodním okně na možnost Create Project
+2) Spustí se wizard pro založení projektu - klikněte na Next
+3) 
