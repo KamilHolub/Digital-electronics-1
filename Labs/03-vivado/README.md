@@ -2,7 +2,7 @@
 
 ### Table with connection of slide switches and LEDs on Nexys A7 board :
 
-![Table with connections](Images/ConnectionTable.png)
+![Table_with_connections](Images/ConnectionTable.png)
 
 # 2. Two-bit wide 4-to-1 multiplexer
 
@@ -51,7 +51,7 @@ p_stimulus : process
 
 ### Simulated time waveforms:
 
-![Time waveforms](Images/analysis.png)
+![Time_waveforms](Images/analysis.png)
 
 # A Vivado tutorial:
 
