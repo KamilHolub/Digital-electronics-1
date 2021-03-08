@@ -33,7 +33,7 @@ Výstupy CA až CG reprezentuji individuální katody pro jednotlivé segmenty d
 | E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
 | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
 
-# 1. Seven-segment display decoder
+# 2. Seven-segment display decoder
 
 ### VHDL architecture from source file hex_7seg.vhd:
 ```vhdl
@@ -112,8 +112,11 @@ p_stimulus : process
     end process p_stimulus;
 ```
 ### Screenshot with simulated time waveforms:
+
 ![Waveforms](Images/Waveforms.png)
+
 ### VHDL code from source file top.vhd with 7-segment module instantiation:
+
 ```vhdl
 -- Instance (copy) of hex_7seg entity
     hex7seg : entity work.hex_7seg
@@ -128,13 +131,14 @@ p_stimulus : process
             seg_o(0) => CG
         );
 ```
+# 3. LED(7:4) indicators
 
-
+### Truth table and listing of VHDL code for LEDs(7:4) with syntax highlighting:
 
 | **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | 0 | 0000 | 1 | 0 | 0 | 0 |
-| 1 | 0001 | 0 | 0 | 1 | 0 |
+| 1 | 0001 | 0 | 0 | 1 | 1 |
 | 2 | 0010 | 0 | 0 | 0 | 1 |
 | 3 | 0011 | 0 | 0 | 1 | 0 |
 | 4 | 0100 | 0 | 0 | 0 | 1 |
@@ -144,90 +148,83 @@ p_stimulus : process
 | 8 | 1000 | 0 | 0 | 0 | 1 |
 | 9 | 1001 | 0 | 0 | 1 | 0 |
 | A | 1010 | 0 | 1 | 0 | 0 |
-| b | 1011 | 0 | 1 | 0 | 0 |
+| b | 1011 | 0 | 1 | 1 | 0 |
 | C | 1100 | 0 | 1 | 0 | 0 |
-| d | 1101 | 0 | 1 | 0 | 0 |
+| d | 1101 | 0 | 1 | 1 | 0 |
 | E | 1110 | 0 | 1 | 0 | 0 |
-| F | 1111 | 0 | 1 | 0 | 0 |
-
-
-
-
-
-
-
-
-
-
-
-![TableWithConnections](Images/ConnectionTable.png)
-
-# 2. Two-bit wide 4-to-1 multiplexer
-
-### Listing of VHDL architecture:
+| F | 1111 | 0 | 1 | 1 | 0 |
 
 ```vhdl
-architecture Behavioral of mux_2bit_4to1 is
+architecture Behavioral of top is
+
 begin
+
+-- Instance (copy) of hex_7seg entity
+    hex7seg : entity work.hex_7seg
+        port map(
+            hex_i    => SW,
+            seg_o(6) => CA,
+            seg_o(5) => CB,
+            seg_o(4) => CC,
+            seg_o(3) => CD,
+            seg_o(2) => CE,
+            seg_o(1) => CF,
+            seg_o(0) => CG
+        );
+        
+        -- Connect one common anode to 3.3V
+       AN <= b"1111_0111";
+        
+        -- Display input value on LEDs
+       LED(3 downto 0) <= SW;
+        
+       LED4 : process (SW)
+            begin
+                if (SW = "0000") then
+                    LED(4) <= '0';
+                else
+                    LED(4) <= '1';
+                end if;
+            end process LED4;
+            
+        LED5 : process (SW)
+            begin
+                if (SW < b"1001") then
+                    LED(5) <= '0';
+                else
+                    LED(5) <= '1';
+                end if;
+            end process LED5;
     
-    f_o <= a_i when (sel_i = "00") else
-           b_i when (sel_i = "01") else
-           c_i when (sel_i = "10") else
-           d_i;
+        LED6 : process (SW)
+            begin
+                if (SW(0) = '1') then
+                    LED(6) <= '0';
+                else
+                    LED(6) <= '1';
+                end if;
+            end process LED6;
+            
+        LED7 : process (SW)
+            begin            
+                case SW is
+                    when "0001" =>
+                    LED(7) <= '0';
+                    when "0010" =>
+                    LED(7) <= '0';
+                    when "0100" =>
+                    LED(7) <= '0';
+                    when "1000" =>
+                    LED(7) <= '0';
+                    when others =>
+                    LED(7) <= '1';
+            end case;
+            end process LED7;
 
-end architecture Behavioral;
+end Behavioral;
 ```
+### Screenshot with simulated time waveforms:
+![TopSimulation](Images/TopSimulation.png)
 
-### Listing of VHDL stimulus process:
 
-```vhdl
-p_stimulus : process
-    begin
-        -- Report a note at the begining of stimulus process
-        report "Stimulus process started" severity note;
 
-        s_d <= "00"; s_c <= "00"; s_b <= "00"; s_a <= "00"; s_sel <= "00";
-        wait for 100 ns;
-        
-        s_d <= "10"; s_c <= "01"; s_b <= "01"; s_a <= "00"; s_sel <= "00";
-        wait for 100 ns;
-        
-        s_d <= "10"; s_c <= "01"; s_b <= "01"; s_a <= "11"; s_sel <= "00";
-        wait for 100 ns;
-        
-        s_d <= "10"; s_c <= "01"; s_b <= "01"; s_a <= "00"; s_sel <= "01";
-        wait for 100 ns;
-        
-        s_d <= "10"; s_c <= "01"; s_b <= "11"; s_a <= "00"; s_sel <= "01";
-        wait for 100 ns;
-        
-        -- Report a note at the end of stimulus process
-        report "Stimulus process finished" severity note;
-        wait;
-    end process p_stimulus;
-```
-
-### Simulated time waveforms:
-
-![TimeWaveforms](Images/Analysis.png)
-
-# 3. A Vivado tutorial:
-
-### Založení projektu:
-1) Pro založení nového projektu po spuštění programu klikněte v úvodním okně na možnost Create Project.
-2) Spustí se wizard pro založení projektu - klikněte na Next.
-3) V kolonce Project name si pojmenujte nový projekt a v kolonce Project location zvolte adresář pro uložení nového projektu. Klikněte na Next.
-4) Zvolte RTL Project a klikněte na Next.
-5) Pomocí tlačítka Create File založíte na disku novou zdrojovou složku. V kolonce File type zvolte jazyk VHDL a v kolonce File name si zvolte název souboru a potvrďte tlačítkem OK. U Target language a Simulator language zvolte jazyk VHDL. Toto lze provézt i později v samotném projektu. Klikněte na Next.
-6) Klikněte na Next
-7) V záložce Boards zvolte desku Nexys A7-50T a klikněte na Next.
-8) V okně Project summary klikněte na Finish
-9) V okně Define Module je možnost nadefinovat si vstupy a výstupy. Klikněte na OK.
-10) V okně Sources rozbalte záložku Design Sources a zvolte Vámi pojmenovaný soubor.
-### Přidání souboru testbench:
-1) V horním panelu klikněte na File > Add Sources... Označte možnost Add or create simulation source a klikněte na Next.
-2) Vytvoříte nový soubor pomocí tlačítka Create File. V kolonce File type zvolte jazyk VHDL a v kolonce File name si zvolte název souboru a potvrďte tlačítkem OK. Klikněte na Finish.
-3) V okně Define Module je možnost nadefinovat si vstupy a výstupy. Klikněte na OK.
-4) V okně Sources rozbalte záložku Simulation Sources a zvolte Vámi pojmenovaný soubor.
-### Spuštění simulace:
-V horním panelu klikněte na Flow > Run Simulation > Run Behavioral Simulation.
