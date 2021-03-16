@@ -144,4 +144,4 @@ Když je tlačítko rozepnuté, odpovídající pin je připojen na zem (logick�
 ```
 ### Image of the top layer including two counters:
 
-![TopLayer](Images/Top.png)
+![TopLayer](Images/Top.jpeg)
