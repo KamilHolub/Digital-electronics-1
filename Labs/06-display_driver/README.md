@@ -205,4 +205,4 @@ end architecture Behavioral;
 
 ### Image of the driver schematic:
 
-![ED](Images/ED.png)
+![ED](Images/ED.jpeg)
