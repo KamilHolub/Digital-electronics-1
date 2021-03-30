@@ -8,7 +8,7 @@
 
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
-   | <Up> | 0 | 0 | 0 | Input signal is sampled at the rising edge of clk and stored to FF |
+   | ![rising](Images/weq_uparrow.png) | 0 | 0 | 0 | Input signal is sampled at the rising edge of clk and stored to FF |
    | ![rising](Images/weq_uparrow.png) | 0 | 1 | 0 | No change |
    | ![rising](Images/weq_uparrow.png) | 1 | 0 | 1 | Input signal is sampled at the rising edge of clk and stored to FF |
    | ![rising](Images/weq_uparrow.png) | 1 | 1 | 1 | No change |
