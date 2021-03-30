@@ -9,27 +9,27 @@
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
    | <Up> | 0 | 0 | 0 | Input signal is sampled at the rising edge of clk and stored to FF |
-   | ![rising](Images/eq_uparrow.png) | 0 | 1 | 0 | No change |
-   | ![rising](Images/eq_uparrow.png) | 1 | 0 | 1 | Input signal is sampled at the rising edge of clk and stored to FF |
-   | ![rising](Images/eq_uparrow.png) | 1 | 1 | 1 | No change |
+   | ![rising](Images/weq_uparrow.png) | 0 | 1 | 0 | No change |
+   | ![rising](Images/weq_uparrow.png) | 1 | 0 | 1 | Input signal is sampled at the rising edge of clk and stored to FF |
+   | ![rising](Images/weq_uparrow.png) | 1 | 1 | 1 | No change |
 
 | **clk** | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](Images/eq_uparrow.png) | 0 | 0 | 0 | 0 | No change |
-   | ![rising](Images/eq_uparrow.png) | 0 | 0 | 1 | 1 | No change |
-   | ![rising](Images/eq_uparrow.png) | 0 | 1 | 0 | 0 | Reset |
-   | ![rising](Images/eq_uparrow.png) | 0 | 1 | 1 | 0 | Reset |
-   | ![rising](Images/eq_uparrow.png) | 1 | 1 | 0 | 1 | Set |
-   | ![rising](Images/eq_uparrow.png) | 1 | 1 | 1 | 1 | Set |
-   | ![rising](Images/eq_uparrow.png) | 1 | 1 | 0 | 1 | Toggle |
-   | ![rising](Images/eq_uparrow.png) | 1 | 1 | 1 | 0 | Toggle |
+   | ![rising](Images/weq_uparrow.png) | 0 | 0 | 0 | 0 | No change |
+   | ![rising](Images/weq_uparrow.png) | 0 | 0 | 1 | 1 | No change |
+   | ![rising](Images/weq_uparrow.png) | 0 | 1 | 0 | 0 | Reset |
+   | ![rising](Images/weq_uparrow.png) | 0 | 1 | 1 | 0 | Reset |
+   | ![rising](Images/weq_uparrow.png) | 1 | 1 | 0 | 1 | Set |
+   | ![rising](Images/weq_uparrow.png) | 1 | 1 | 1 | 1 | Set |
+   | ![rising](Images/weq_uparrow.png) | 1 | 1 | 0 | 1 | Toggle |
+   | ![rising](Images/weq_uparrow.png) | 1 | 1 | 1 | 0 | Toggle |
 
 | **clk** | **t** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](Images/eq_uparrow.png) | 0 | 0 | 0 | No change |
-   | ![rising](Images/eq_uparrow.png) | 0 | 1 | 1 | No change |
-   | ![rising](Images/eq_uparrow.png) | 1 | 0 | 1 | Toggle |
-   | ![rising](Images/eq_uparrow.png) | 1 | 1 | 0 | Toggle |
+   | ![rising](Images/weq_uparrow.png) | 0 | 0 | 0 | No change |
+   | ![rising](Images/weq_uparrow.png) | 0 | 1 | 1 | No change |
+   | ![rising](Images/weq_uparrow.png) | 1 | 0 | 1 | Toggle |
+   | ![rising](Images/weq_uparrow.png) | 1 | 1 | 0 | Toggle |
 
 # 2. D latch
 
