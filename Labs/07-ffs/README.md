@@ -8,10 +8,10 @@
 
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](Images/uparrow.png) | 0 | 0 | 0 | Input signal is sampled at the rising edge of clk and stored to FF |
-   | ![rising](Images/parrow.png) | 0 | 1 | 0 | No change |
-   | ![rising](Images/uparrow.png) | 1 | 0 | 1 | Input signal is sampled at the rising edge of clk and stored to FF |
-   | ![rising](Images/uparrow.png) | 1 | 1 | 1 | No change |
+   | <Up> | 0 | 0 | 0 | Input signal is sampled at the rising edge of clk and stored to FF |
+   | ![rising](Images/eq_uparrow.png) | 0 | 1 | 0 | No change |
+   | ![rising](Images/eq_uparrow.png) | 1 | 0 | 1 | Input signal is sampled at the rising edge of clk and stored to FF |
+   | ![rising](Images/eq_uparrow.png) | 1 | 1 | 1 | No change |
 
 | **clk** | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-: | :-- |
