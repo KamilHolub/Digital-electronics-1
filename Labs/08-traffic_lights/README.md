@@ -175,7 +175,7 @@ p_output_fsm : process(s_state)
 
 # State diagram:
 
-![4](Images/5.jpeg)
+![4](Images/4.jpeg)
 
 # VHDL code of sequential process p_smart_traffic_fsm:
 
